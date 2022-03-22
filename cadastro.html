@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    
+    <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" href="https://www.drogariatotal.com.br/pub/media/wysiwyg/drogariatotal/logo_centro.png">
+    <title>DrogaNutri</title>
+    </head>
+    
+    <body>
+        
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
+
+        <nav>       
+            
+
+            <ul>
+              <div>
+                <button class="dropbtn"><a href="uninutri.html">DrogaNutri</a> </button>
+           
+                    <button class="dropbtn"><a href="visao.html"> visão </a> </button>
+                
+               
+                    <div class="dropdown">
+                        
+                        <button onclick="myFunction()" class="dropbtn">settings</button>
+                        <div id="myDropdown" class="dropdown-content">
+                        <a href="#">ajuda</a>
+                        <a href="contato.html">contato</a>
+                        <a href="">abobrinha</a>
+                     
+                    </div>
+                   
+                </div>
+                
+                
+            </ul>
+            <center>
+            <div id="divBusca">
+                <input type="text" id="txtBusca" placeholder="Buscar..."/>
+                <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png " width="25" height="25" id="btnBusca" alt="Buscar"/>
+            </div>
+            </center>
+        </nav> 
+    <br>
+    <br>
+   
+    <center>
+      <br>
+      
+            <script>
+                var cpf = document.querySelector("#cpf");
+
+cpf.addEventListener("blur", function(){
+   if(cpf.value) cpf.value = cpf.value.match(/.{1,3}/g).join(".").replace(/\.(?=[^.]*$)/,"-");
+});
+function mascara(i){
+   
+   var v = i.value;
+   
+   if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+
+}
+            </script>
+
+        <div class="card">
+            
+                    <body>
+                    
+                        <div class="container-table">
+                            <div class="content">
+                                <div id="formulario" class="formulario">
+                                    <div>
+                                        <form action="createUser.php" method="post">
+                                            <div id="title">
+                                                <h1 id="title-form">Cadastro de novo Usuário</h1>
+                                                <a class="close"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+                                            </div>
+                                            <div class="container-form">
+                                                <div class="input_div">
+                                                    <input class="input_form" type="" name="nameMask" placeholder="Digite seu Nome"
+                                                    value=""  required >
+                                                </div>
+                                                <div class="input_div">
+                                                    <input type="text" name="email" onblur="validacaoEmail(f1.email)"  placeholder="Digite seu email">
+                                                    
+                                                </div>
+                                                <div class="input_div">
+                                                    <input oninput="mascara(this)" type="text" placeholder="Digite seu CPF">
+                                                </div>
+                                                <div class="input_div">
+                                                    <input class="input_form" type="text" name="login" placeholder="Digite seu Login"
+                                                    value="" required>
+                                                </div>
+                                                <div class="input_div">
+                                                    <input class="input_form" type="password" name="password" placeholder="Digite sua Senha" required>
+                                                </div>
+                                                 <div class="input_div">
+                                                    <input type="text" class="form-control" placeholder="Telefone" id="telefone" name="telefone" ><br>
+                                                </div>
+                                                <div class="input_div">
+                                                   <input type="text" class="form-control cep-mask" placeholder="cep: 00000-000">
+                                                </div>
+                                                 <div class="input_div">
+                                                    <input class="input_form" type="text" name="city" placeholder="Digite sua Cidade"
+                                                    value="" required>
+                                                </div>
+                                                 <div class="input_div">
+                                                    <input class="input_form" type="text" name="state" placeholder="Digite seu Estado"
+                                                    value="" required>
+                                                </div>
+                                                 <div class="input_div">
+                                                   
+                                                    <select  name=" Sexo:">
+                                                        
+                                                        <option value="valor1" selected>Masculino</option>
+                                                        <option value="valor2" >Feminino</option>
+                                                        <option value="valor3">helicoptero</option>
+                                                      </select>
+                                                </div>
+                                            </div>
+                                            <button class="send-buttons" name="action" value="create"> enviar </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-table">
+                            <button id="form-button" class="add_table">
+                                Adicionar Usuário <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <div class="content">
+
+
+                        <script>
+                            var modal = document.getElementById('formulario');
+
+var btn = document.getElementsByClassName('add_table')[0];
+
+var close = document.getElementsByClassName("close")[0];
+
+var edit = document.getElementsByClassName("fa fa-pencil-square-o");
+
+var input = document.getElementsByTagName("input");
+
+var option = document.getElementsByTagName("option");
+
+function clearContents(){
+    modal.style.top = "-200%";
+    modal.style.background = "rgba(0,0,0,0.0)";
+    modal.style.zIndex = -1;
+    document.getElementById('title-form').innerHTML = "Cadastro de novo Usuário";
+    document.getElementsByName("action")[0].value = "create";
+    for(x=0;x<input.length-1;x++){
+        input[x].value = "";
+    }
+    for(x=0;x<option.length;x++){
+    	option[x].selected = false;
+    }
+ }
+
+btn.onclick = function() {
+    modal.style.zIndex = 1;modal.style.top = 0;
+    modal.style.background = "rgba(0,0,0,0.8)";
+}
+
+close.onclick = function() {
+	clearContents();
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        clearContents();
+    }
+
+}
+        </script>
+
+<script language="Javascript">
+    function validacaoEmail(field) {
+    usuario = field.value.substring(0, field.value.indexOf("@"));
+    dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.length);
+    
+    if ((usuario.length >=1) &&
+        (dominio.length >=3) &&
+        (usuario.search("@")==-1) &&
+        (dominio.search("@")==-1) &&
+        (usuario.search(" ")==-1) &&
+        (dominio.search(" ")==-1) &&
+        (dominio.search(".")!=-1) &&
+        (dominio.indexOf(".") >=1)&&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+    document.getElementById("msgemail").innerHTML="E-mail válido";
+    alert("E-mail valido");
+    }
+    else{
+    document.getElementById("msgemail").innerHTML="<font color='red'>E-mail inválido </font>";
+    alert("E-mail invalido");
+    }
+    }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('#telefone').mask('(00) 0000-0000');
+          });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </center>
+        </body>
+        </html>

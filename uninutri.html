@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    
+    <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" href="https://www.drogariatotal.com.br/pub/media/wysiwyg/drogariatotal/logo_centro.png">
+    <title>DrogaNutri</title>
+    </head>
+    
+    <body>
+        
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+              if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                  var openDropdown = dropdowns[i];
+                  if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                  }
+                }
+              }
+            }
+            </script>
+
+        <nav>       
+            
+
+            <ul>
+                <div>
+                    <button class="dropbtn"><a href="uninutri.html">DrogaNutri</a> </button>
+               
+                        <button class="dropbtn"><a href="cadastro.html">cadastro</a> </button>
+                    
+                   
+                        <div class="dropdown">
+                            
+                            <button onclick="myFunction()" class="dropbtn">settings</button>
+                            <div id="myDropdown" class="dropdown-content">
+                            <a href="#">ajuda</a>
+                            <a href="contato.html">contato</a>
+                            <a href="">abobrinha</a>
+                            <svg height="210" width="500">
+                                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                                style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                              </svg>
+                        </div>
+                       
+                  
+                   
+                </div>
+                
+                
+            </ul>
+            <center>
+            <div id="divBusca">
+                <input type="text" id="txtBusca" placeholder="Buscar..."/>
+                <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png " width="25" height="25" id="btnBusca" alt="Buscar"/>
+            </div>
+            </center>
+        </nav> 
+    <br>
+    
+   
+    <center>
+            <div class="svg">
+                    <svg height="35" width="275">
+                            <text x="5" y="15" fill="red" transform="rotate(0,0,0)">Drogas trazem saúde, vem pra droga nutri</text>
+                          </svg>
+                        </div>
+                  </div>
+        <div class="card">
+            
+        <h1>Bem vindos ao DrogaNutri</h1>
+      
+              
+        <h2>focamos em sua </h2>
+        <img src="https://prefonline-savein.cdn.jelastic.net/wp-content/uploads/sites/20/2018/04/Saude.png" height="250" width="250">
+        <div class="svg">
+                <svg height="35" width="275">
+                        <text x="5" y="15" fill="red" transform="rotate(0,0,0)">Drogas trazem saúde, vem pra droga nutri</text>
+                      </svg>
+                    </div>
+        <br>
+        <h2>O que é IMC?</h2>
+        <p>IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa.
+
+            O índice é calculado da seguinte maneira: divide-se o peso do paciente pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.</p>
+        <br>
+        <script type="text/javascript">
+            function calcular(){
+                // pegando o id do formulario
+                var formulario = document.getElementById("formulario");	
+                
+                // kilos é minha variavel
+                // formulario é o id do meu formulario
+                // value é o valor do input
+                // o + na frente transforma em number a string	
+                    
+                var kilos  		= +formulario.kilos.value;
+                var metros 		= +formulario.metros.value;
+                var centimetros = +formulario.centimetros.value;
+                
+                 // altura
+                var altura = (metros * 100 + centimetros) / 100;
+                 
+                // imc
+                var imc = kilos / (altura * altura);
+                
+                // o metodo toFixed fixa apenas duas casas decimais apos o ponto.
+                formulario.imc.value = imc.toFixed(2);
+                
+                if(imc < 20)
+                {
+                    alert('Você esta abaixo do peso!');
+                } 
+                else if(imc >20 && imc <= 25)
+                {
+                    alert("Peso Ideal");
+                }
+                else if(imc >25 && imc <= 30)
+                {
+                    alert("Sobrepeso");
+                }
+                else if(imc >30 && imc <= 35)
+                {
+                    alert("Obesidade Moderada");
+                }
+                else if(imc >35 && imc <= 40)
+                {
+                    alert("Obesidade Severa");
+                }
+                else if(imc >40 && imc <= 50)
+                {
+                    alert("Obesidade Morbida");
+                }
+                else
+                {
+                    alert('Gordo');
+                }
+            }
+        </script>
+        
+        <form id="formulario">
+            <fieldset>
+                <legend>Calculo IMC</legend>
+                
+                <label for="kilos">Kilos:</label>
+                <input name="kilos" type="text" />
+                <br>
+                <label for="metros">metros:</label>
+                <input name="metros" type="text" />
+                <br>
+                <label for="centimetros">centimetros:</label>
+                <input name="centimetros" type="text" />
+                <br>
+                <label for="imc">imc:</label>
+                <input name="imc" type="text" disabled="disabled" />
+                <br>
+                    
+                <a href="#" onclick="calcular();">Calcular</a>
+            </fieldset>
+            </form>
+            </div>
+            <div class="card">
+                <h1>Receitas para dietas</h1>
+                <h3><strong>Para ganhar massa</strong></h3>
+                <p> 1. Não pular refeições.
+                    Evitar pular refeições é importante para que seja possível atingir todas as calorias necessárias durante o dia, sem estimular possíveis perdas de massa magra durante um jejum prolongado. O ideal é que sejam feitas de 5 a 6 refeições por dia, com atenção redobrada no café da manhã, pré e pós-treino.
+                </p>   
+                <p>
+                    2. Consumir mais proteínas. 
+                    Aumentar o consumo de proteínas é necessário para permitir o crescimento muscular, sendo importante que os alimentos fontes de proteínas sejam bem distribuídos ao longo do dia, e não concentradas em apenas 2 ou 3 refeições. Esses alimentos são principalmente os de origem animal, como carnes, peixes, frango, queijos, ovos e leite e derivados, mas as proteínas também podem ser encontradas em boa quantidade em alimentos como feijão, ervilha, lentilha, amendoim e grão-de-bico.
+                    Além disso, algumas vezes pode ser necessário o uso de suplementos a base de proteínas, como Whey Protein e caseína, especialmente usados no pós-treino ou para aumentar o valor nutricional de refeições pobres em proteínas ao longo do dia.
+                </p> 
+                <p>
+                    3. Consumir gorduras boas.
+                    Ao contrário do que se imagina, consumir gorduras boas ajuda a reduzir o acúmulo de gordura no corpo e ainda facilita o aumento de calorias na dieta para ganhar massa muscular. Essas gorduras estão presentes em alimentos como abacate, azeite, azeitona, amendoim, pasta de amendoim, semente de linhaça, castanhas, nozes, avelãs, macadâmia, peixes como atum, sardinha e salmão.
+                    Ao longo dia, esses alimentos podem ser adicionados em lanches como receitas de crepioca, bolinhos fit, nos iogurtes, em vitaminas e nas refeições principais.
+                
+                </p>
+                <br>
+                <h3><strong>Para perder peso</strong></h3>
+                <p>
+                    1. Para fazer a dieta para emagrecer, é preciso ter orientação de um nutricionista, isso porque após a avaliação física e dos hábitos alimentares, é possível que o nutricionista proponha alteração nesses hábitos que sejam suficientes para promover mudanças no metabolismo capazes de favorecer o emagrecimento. De forma geral, algumas das recomendações são:
+                </p>
+                <p>
+                    2. Alimentos permitidos: carnes magras, peixes, ovos, frutos do mar, leite e derivados desnatados, sementes, castanhas, legumes, verduras e frutas.
+                </p>
+                <p> 
+                    3. Alimentos proibidos: açúcar, batatas, macarrão, pão, arroz, farinhas, maionese, manteiga, óleo, azeite, banana, uva, abacate e carnes processadas como linguiça, salsicha, bacon e presunto.
+                </p>
+                <p>
+                    4. Beber bastante água durante o dia, pois além de promover a hidratação do corpo, favorece a sensação de saciedade e aumenta a queima de calorias;
+                </p>
+                <p>
+                    5. Beber chás que ajudam a reduzir o inchaço e a retenção de líquidos, diminuir o apetite e acelerar o metabolismo, como o de limão, gengibre ou chá verde, podendo ser consumidos para complementar a dieta.
+                </p>
+                <h3>Exercícios para emagrecer</h3>
+                <p>
+                    Para complementar a dieta e garantir o emagrecimento, é também recomendada a prática de atividade física, que devem ser orientados por um profissional de educação física de acordo com o nível de treinamento da pessoa. 
+                </p>
+                <p>
+                    1. Exercícios aeróbicos
+                    Os melhores exercícios para emagrecer são os aeróbicos, como caminhada rápida, corrida, andar de bicicleta, remo ou natação. Esse tipo de atividade física queima muitas calorias em pouco tempo, sendo ideais para queimar gordura acumulada, além disso melhoram a força do coração e a capacidade respiratória. Devem ser realizados no mínimo durante 20 minutos, diariamente.
+                </p>
+                <p>
+                    2. Exercícios de musculação e crossfit
+                    A musculação é também uma prática que ajuda no emagrecimento, pois favorece o ganho de massa muscular, o que é essencial para estimular a aceleração do metabolismo, a queima de gordura acumulada e garantir o emagrecimento. Nesse tipo de atividade, podem ser utilizados halteres, barras e polias, que ajudam a desenvolver os músculos, sendo importante que sejam seguidas as orientações do profissional de educação física.
+                    O crossfit é também uma modalidade esportiva que pode ser realizada usando pesos e barras, promovendo o desenvolvimento do muscular, no entanto os exercícios são normalmente associados com exercícios aeróbicos, garantindo um maior gasto calórico e melhora cardiovascular, o que favorece o funcionamento do metabolismo e a perda de peso.
+                </p>
+        </div>
+        <br>
+        <br>
+        
+
+     
+    </center>
+    </body>
+</html>
+    

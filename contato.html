@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    
+    <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" href="https://www.drogariatotal.com.br/pub/media/wysiwyg/drogariatotal/logo_centro.png">
+    <title>DrogaNutri</title>
+    </head>
+    
+    <body>
+      <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+
+    <nav>       
+        
+
+        <ul>
+          <div>
+            <button class="dropbtn"><a href="uninutri.html">DrogaNutri</a> </button>
+       
+                <button class="dropbtn"><a href="cadastro.html">cadastro</a> </button>
+            
+           
+                <div class="dropdown">
+                    
+                    <button onclick="myFunction()" class="dropbtn">settings</button>
+                    <div id="myDropdown" class="dropdown-content">
+                    <a href="#">ajuda</a>
+                    <a href="contato.html">contato</a>
+                    <a href="">abobrinha</a>
+                 
+                </div>
+               
+            </div>
+               
+            </div>
+            
+            
+        </ul>
+        <center>
+        <div id="divBusca">
+            <input type="text" id="txtBusca" placeholder="Buscar..."/>
+            <img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-21.png " width="25" height="25" id="btnBusca" alt="Buscar"/>
+        </div>
+        </center>
+    </nav> 
+    <br>
+    
+   
+    <center>
+            <div class="svg">
+                    <svg height="35" width="275">
+                            <text x="5" y="15" fill="red" transform="rotate(0,0,0)">Drogas trazem saúde, vem pra droga nutri</text>
+                          </svg>
+                        </div>
+                  </div>
+
+
+        <div class="card">
+            
+        <h1>Bem vindos ao DrogaNutri</h1>
+      
+              
+        <h2>focamos em sua </h2>
+        <img src="https://prefonline-savein.cdn.jelastic.net/wp-content/uploads/sites/20/2018/04/Saude.png" height="250" width="250">
+        <div class="svg">
+                <svg height="35" width="275">
+                        <text x="5" y="15" fill="red" transform="rotate(0,0,0)">Drogas trazem saúde, vem pra droga nutri</text>
+                      </svg>
+                    </div>
+                    <h1>Nossa localização</h1>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6138492.164757744!2d60.083748820002114!3d41.302105633689436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2sUzbequist%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1647468822975!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+       
+                   <br>
+                    <a href="https://www.instagram.com/droganutri/"><img src="https://www.campolargo.pr.leg.br/imagens/instagram.png/image_preview" height="80" width="80"></a>
+                  </div>
+    </center>
+    
+        </body>
+        </html>
